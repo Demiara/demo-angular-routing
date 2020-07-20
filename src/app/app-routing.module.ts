@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: '', redirectTo: '/heroes', pathMatch: 'full' }];
+const routes: Routes = [{ path: '', redirectTo: '/superheroes', pathMatch: 'full' }];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
