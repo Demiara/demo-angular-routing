@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HeroesModule } from './heroes/heroes.module';
 import { NgModule } from '@angular/core';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [AppComponent, PageNotFoundComponent],
