@@ -1,8 +1,14 @@
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+    {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup',
+    },
     {
         path: 'crisis-center',
         loadChildren: () =>
