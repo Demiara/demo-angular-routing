@@ -3,6 +3,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
+import {SelectivePreloadingStrategyService} from './selective-preloading-strategy.service';
 
 const routes: Routes = [
     {
@@ -26,7 +27,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [
+        RouterModule.forRoot(routes, {
+            enableTracing: false,
+            preloadingStrategy: SelectivePreloadingStrategyService,
+        }),
+    ],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
