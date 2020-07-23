@@ -10,6 +10,10 @@ const routes: Routes = [
         outlet: 'popup',
     },
     {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    },
+    {
         path: 'crisis-center',
         loadChildren: () =>
             import('./crisis-center/crisis-center.module').then(m => m.CrisisCenterModule),
