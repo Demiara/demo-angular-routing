@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth.guard';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
     {
         path: 'admin',
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+        canLoad: [AuthGuard],
     },
     {
         path: 'crisis-center',
