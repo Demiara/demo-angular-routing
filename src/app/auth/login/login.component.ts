@@ -1,6 +1,6 @@
 import { AuthService } from '../auth.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -26,7 +26,12 @@ export class LoginComponent {
             if (this.authService.isLoggedIn) {
                 const redirectUrl = this.authService.redirectUrl;
 
-                this.router.navigate([redirectUrl]);
+                let navigationExtras: NavigationExtras = {
+                    queryParamsHandling: 'preserve',
+                    preserveFragment: true,
+                };
+
+                this.router.navigate([redirectUrl], navigationExtras);
             }
         });
     }
